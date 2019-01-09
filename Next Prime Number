@@ -21,15 +21,38 @@ int Isprime(int n)
     return 1;
 }
 
-int main()
-
+int get_next_prime(int current_prime)
 {
-    for( int i = 2; i <= 1000;i++)
-    {
-        if(Isprime(i)  ==  1)
-        {
-           std::cout << i << ",";
-        }
-    }
-    return 0;
+	int next_prime = current_prime + 1;
+	while(1)
+	{
+		if(Isprime(next_prime) == 1)
+		{
+			return next_prime;
+		}
+		else
+		{
+			next_prime++;
+		}
+	}
+}
+
+int main()
+{
+	int current_prime = 2;
+	int userdecision;
+	while (1)
+	{
+		std::cout << "would you like to know the next prime ?" << std::endl << "Y/N" ;
+		std::cin >> userdecision;
+		if (userdecision == 1){
+			std::cout << current_prime << std::endl;
+			current_prime  = get_next_prime(current_prime);
+		}
+		else
+		{
+			break;
+		}
+	}
+	return 0;
 }	
