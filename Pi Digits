@@ -15,12 +15,17 @@ long doublefactorial(int n)
 
 long double pi_calculator()
 {
-    long double pi = 0;
-    for (int k = 0; k <= 50; k++)
+    long double recripcal_pi = 0;
+    int k;
+    long double top;
+    long double bottom;
+    for (k = 0; k <=10; k++)
     {
-        pi = pi + 2*(pow(2,k)*pow(factorial(k),2))/(factorial(2*k+1));
-        std::cout << std::setprecision(32) << pi << std::endl;
+		top = 12*pow(-1.0,k) * factorial(6*k)*(13591409.0 + 545140134.0*k);
+		bottom = factorial(3.0*k) * pow(factorial(k),3.0) * pow(640320.0,3.0*k + 1.5);
+        recripcal_pi += top/bottom;
     }
+	long double pi = 1/recripcal_pi;
     return pi;
 }
 
