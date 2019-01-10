@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+
+/*  pi calculator /return pi to a given precision.
+
+*/
+
+long double factorial(int n)
+{
+	long double x = 1;
+	for( int i = 1; i <=n; i++)
+	{
+		x*=i;
+	}
+	return x;
+}
+
+long double pi_calculator()
+{
+    long double pi = 0;
+    for (int k = 0; k <= 50; k++)
+    {
+        pi = pi + 2*(pow(2,k)*pow(factorial(k),2))/(factorial(2*k+1));
+        std::cout << std::setprecision(32) << pi << std::endl;
+    }
+    return pi;
+}
+
+
+
+
+int main()
+{
+    std::cout << "How many digits of PI would you like to see?" << std::endl;
+    int Decimal_Places;
+    std::cin >> Decimal_Places;
+	std::cout << std::setprecision(Decimal_Places) << pi_calculator(); 
+}
