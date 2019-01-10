@@ -40,18 +40,23 @@ int get_next_prime(int current_prime)
 int main()
 {
 	int current_prime = 2;
-	int userdecision;
+	char userdecision;
 	while (1)
 	{
-		std::cout << "would you like to know the next prime ?" << std::endl << "Y/N" ;
+		std::cout << "would you like to know the next prime ?" << std::endl << "Y/N" <<  std::endl ;
 		std::cin >> userdecision;
-		if (userdecision == 1){
+		if (userdecision == 'Y' || 'y')
+		{
 			std::cout << current_prime << std::endl;
 			current_prime  = get_next_prime(current_prime);
 		}
-		else
+		if(userdecision == 'N' || 'n')
 		{
 			break;
+		}
+		else
+		{
+		    std::cout << "that isn't an option." << std::endl;
 		}
 	}
 	return 0;
