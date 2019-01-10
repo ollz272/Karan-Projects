@@ -6,14 +6,11 @@
 
 */
 
-long double factorial(int n)
+long doublefactorial(int n)
 {
-	long double x = 1;
-	for( int i = 1; i <=n; i++)
-	{
-		x*=i;
-	}
-	return x;
+	if (n <= 0)
+		return 1;
+	return n*factorial(n-1);
 }
 
 long double pi_calculator()
