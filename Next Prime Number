@@ -45,18 +45,21 @@ int main()
 	{
 		std::cout << "would you like to know the next prime ?" << std::endl << "Y/N" <<  std::endl ;
 		std::cin >> userdecision;
-		if (userdecision == 'Y' || 'y')
+		if (userdecision == 'Y'|| userdecision == 'y')
 		{
 			std::cout << current_prime << std::endl;
 			current_prime  = get_next_prime(current_prime);
 		}
-		if(userdecision == 'N' || 'n')
-		{
-			break;
-		}
 		else
 		{
-		    std::cout << "that isn't an option." << std::endl;
+		    if(userdecision == 'N' ||userdecision ==  'n')
+		    {
+			    break;
+		    }
+		    else
+		    {   
+		        std::cout << "that isn't an option." << std::endl;
+		    }
 		}
 	}
 	return 0;
