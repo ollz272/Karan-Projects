@@ -1,0 +1,35 @@
+// Example program
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+
+void Mortgage(int loan, double rate, int term)
+{
+    double monthly_rate = rate/(12*100);
+    cout << "monthly_rate=" << monthly_rate << endl;
+    double monthly_rate_percent= 1 + monthly_rate;
+    cout << "monthly_rate_percent = "<< monthly_rate_percent << endl;
+    double r = 1/monthly_rate_percent;
+    cout << "r=" << r << endl;
+    double factor = (1-r)/(r - pow(r,12*term + 1));
+    double monthly_payment = loan*factor;
+    double total_value = monthly_payment*12*term;
+    cout << "the total value of the mortgage is £" << total_value << ". That gives a monthly value of £" << monthly_payment;
+}
+
+int main()
+{
+    cout << "how large is your loan?"<< std::endl;
+    int loan;
+    cin >> loan;
+    cout << "what is the interest rate" << endl;
+    double rate;
+    cin >> rate;
+    cout <<  "what is the term of the mortgage?" << endl;
+    int term;
+    cin >> term;
+    Mortgage(loan, rate, term);
+    return 0;
+}
