@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+
+void PrimeFactors( int num)
+{
+    int Factor = 2; // this sets the first factor to try as 2.
+    std::cout << 1 ;
+    while(num != 1) //this will loop until all the primes have been found
+    {
+        if(num%Factor !=0) //should Factor not be a prime, we increase it by one. this could be made more efficient, as if we've checked 2, 4 won't be a factor, but im not quite sure how to go about that yet! (unless we gave the program a list of all primes, and got it to cycle through them)
+        {
+            Factor++;
+        }
+        else //if it does divide, we display the given prime, and divide num by that factor. This ensures that, eventually, num=1.
+        {
+            std::cout  << "*"<< Factor ;
+            num = num/Factor;
+        }
+    }
+}
+
+int main()
+{
+  int num;
+  std::cout << "enter a number" << std::endl;
+  std::cin >> num;
+  PrimeFactors(num);
+  return 0;
+}
