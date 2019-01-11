@@ -1,0 +1,18 @@
+// Example program
+#include <iostream>
+#include <string>
+
+int main()
+{
+    std:: cout << "how wide is your floor in meters";
+    double width;
+    std::cin >> width;
+    std::cout << "how long is your floor in meters?";
+    double length;
+    std::cin >> length;
+    std::cout <<" what is the cost of your tile per meter squared?";
+    double cost;
+    std::cin >> cost;
+    std::cout <<"This will cost you £"<< cost*length*width;
+    return 0;
+}
